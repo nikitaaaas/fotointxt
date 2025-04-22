@@ -11,6 +11,22 @@ from telegram.ext import (
     ContextTypes,
     CallbackQueryHandler
 )
+from threading import Thread
+import requests
+import time
+
+def keep_alive():
+    while True:
+        try:
+            # URL вашого сервісу на Render (знаходиться в Dashboard Render)
+            requests.get("https://fotointxt.onrender.com")
+            print("Ping sent to keep alive")  # Для логування
+        except Exception as e:
+            print(f"Ping failed: {e}")
+        time.sleep(300)  # Кожні 5 хвилин (Render вимикається після 15 хв бездіяльності)
+
+# Запускаємо пінг у окремому потоці
+Thread(target=keep_alive, daemon=True).start()
 
 # Налаштування логування
 logging.basicConfig(
