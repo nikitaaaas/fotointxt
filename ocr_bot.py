@@ -36,7 +36,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Токен бота 
-BOT_TOKEN = '7635139431:AAGSZYwT40RXU069lSH7WgpEdyQVhlCxxHE'
+BOT_TOKEN = os.environ.get('7635139431:AAGSZYwT40RXU069lSH7WgpEdyQVhlCxxHE')
 
 # Стани бота
 (
