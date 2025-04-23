@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 
 # Токен бота 
 BOT_TOKEN = os.getenv('7635139431:AAGSZYwT40RXU069lSH7WgpEdyQVhlCxxHE')
+print("Loaded BOT_TOKEN:", BOT_TOKEN)
 
 # Стани бота
 (
